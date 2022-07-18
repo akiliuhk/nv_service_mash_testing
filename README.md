@@ -141,7 +141,7 @@ service/demoy-app-2-svc   LoadBalancer   10.43.144.240   10.201.0.211   80:31526
 Create Service Entry
 
 ```bash
-# kubectl create -f istio-service-entry.yaml
+# kubectl create -f istio-one-se-gfeng.yaml
 serviceentry.networking.istio.io/http-route created
 ```
 
