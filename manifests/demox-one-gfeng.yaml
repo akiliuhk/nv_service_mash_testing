@@ -115,6 +115,7 @@ spec:
   gateways:
   - istio-system/http-gateway
   hosts:
+  #- demox-app-1.sst.suse.lab  
   - demox-app-1-svc.demox
   #- a89aed554d8884c218b83a834a0787cb-1414116015.us-east-1.elb.amazonaws.com
   http:
@@ -137,6 +138,7 @@ spec:
   - mesh
   #- istio-system/http-gateway
   hosts:
+  #- demox-app-2.sst.suse.lab
   - demox-app-2-svc.demox
   http:
   - route:
