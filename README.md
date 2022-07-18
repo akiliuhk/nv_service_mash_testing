@@ -51,7 +51,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 #### Step 1 - Create `http-gateway` in the Istio system
 
 ```
-kubectl create -f manifests/istio-gateway.yaml
+kubectl create -f manifests/istio-one-gw-gfeng.yaml
 ```
 
 Verify the http-gateway is deployed successfully
