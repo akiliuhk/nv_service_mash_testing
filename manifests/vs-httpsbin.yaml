@@ -27,6 +27,7 @@ spec:
   hosts:
   #- "a80c9f6f3b84f42f2bd23d116fc2b435-1684764718.us-east-1.elb.amazonaws.com"
   - "*.us-east-1.elb.amazonaws.com"
+  - "*.sst.suse.lab"
   gateways:
   - mesh
   - mygateway
