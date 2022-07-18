@@ -152,7 +152,7 @@ Check the service entry definition
 ```bash
 # kubectl get se -n istio-system
 NAME                   HOSTS                                                                                  LOCATION        RESOLUTION   AGE
-internal-https-route   ["*.sst.suse.lab","demo-test-1-app-1.sst.suse.lab","demo-test-2-app-1.sst.suse.lab"]   MESH_INTERNAL   DNS          24d
+internal-https-route   ["*.sst.suse.lab","demox-app-1.sst.suse.lab","demox-app-2.sst.suse.lab","demoy-app-1.sst.suse.lab","demoy-app-2.sst.suse.lab"]   MESH_INTERNAL   DNS          24d
 ```
 
 
@@ -162,7 +162,7 @@ Check the virtual services in `demox` and `demoy` namespace.
 ```bash
 # kubectl get vs -n demox
 NAME             GATEWAYS                        HOSTS                                                                         AGE
-demox-app-1-vs   ["istio-system/http-gateway"]   ["a89aed554d8884c218b83a834a0787cb-1414116015.us-east-1.elb.amazonaws.com"]   9m11s
+demox-app-1-vs   ["istio-system/http-gateway"]   ["demox-app-1-svc.demox"]   9m11s
 demox-app-2-vs   ["mesh"]                        ["demox-app-2-svc.demox"]
 ```
 
