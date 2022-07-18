@@ -5,7 +5,8 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  - "*.us-east-1.elb.amazonaws.com"
+  #- "*.us-east-1.elb.amazonaws.com"
+  - "*.sst.suse.lab"
   location: MESH_INTERNAL
   ports:
   - name: https
