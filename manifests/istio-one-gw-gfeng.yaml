@@ -5,12 +5,10 @@ metadata:
   namespace: istio-system
 spec:
   hosts:
-  #- '*.home-np-poc2.oocl.com'
-  #- '*.home-np.oocl.com'
   #- httpbin.example.com
   #- a89aed554d8884c218b83a834a0787cb-1414116015.us-east-1.elb.amazonaws.com
-  - '*.us-east-1.elb.amazonaws.com'
-  #- demox-app-1-svc.demox
+  #- '*.us-east-1.elb.amazonaws.com'
+  - demox-app-1-svc.demox
   - demox-app-2-svc.demox
   - demoy-app-1-svc.demoy
   - demoy-app-2-svc.demoy
