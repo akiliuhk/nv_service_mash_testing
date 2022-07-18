@@ -10,9 +10,9 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
 ## Testing Environment
 
-1. Deployed Rancher 2.6.5
+1. Deployed Rancher 2.6.6
 
-2. Provisioned a RKE2-based downstream kubernetes (v1.23.6) cluster with the following cluster tools deployed.
+2. Provisioned a RKE-based downstream kubernetes (v1.22.9) cluster with the following cluster tools deployed.
 
    * Rancher Monitoring (Prometheus/Grafana)
    * Rancher Istio
@@ -23,7 +23,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
 3. Testing Host:
 
-   SLES 15 SP3 with kubectl installed and configured to connect to the above RKE2 cluster
+   SLES 15 SP3 with kubectl installed and configured to connect to the above RKE cluster
 
    Check out the testing manifests into the testing host
 
@@ -51,7 +51,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 Step 1 - Create `http-gateway` in the Istio system
 
 ```
-kubectl create -f manifests/istio-http-gateway.yaml
+kubectl create -f manifests/istio-gateway.yml
 ```
 
 Verify the http-gateway is deployed successfully
