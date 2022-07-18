@@ -51,7 +51,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 #### Step 1 - Create `http-gateway` in the Istio system
 
 ```
-kubectl create -f manifests/istio-gateway.yml
+kubectl create -f manifests/istio-gateway.yaml
 ```
 
 Verify the http-gateway is deployed successfully
@@ -74,7 +74,7 @@ kubectl create -f manifests/demoy-one-gfeng.yaml
 The output would be similar to as follows:
 
 ```bash
-# kubectl create -f manifests/demox-one-gfeng.yml
+# kubectl create -f manifests/demox-one-gfeng.yaml
 namespace/demox created
 deployment.apps/demox-app-1 created
 deployment.apps/demox-app-2 created
@@ -83,7 +83,7 @@ service/demox-app-2-svc created
 virtualservice.networking.istio.io/demox-app-1-vs created
 virtualservice.networking.istio.io/demox-app-2-vs created
 
-# kubectl create -f manifests/demoy-one-gfeng.yml
+# kubectl create -f manifests/demoy-one-gfeng.yaml
 namespace/demoy created
 deployment.apps/demoy-app-1 created
 deployment.apps/demoy-app-2 created
