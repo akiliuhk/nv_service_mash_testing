@@ -134,7 +134,6 @@ metadata:
 spec:
   gateways:
   - mesh
-  #- istio-system/http-gateway
   hosts:
   - demox-app-2.sst.suse.lab
   http:

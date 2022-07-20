@@ -135,7 +135,6 @@ metadata:
 spec:
   gateways:
   - mesh
-  #- istio-system/http-gateway
   hosts:
   - demoy-app-2.sst.suse.lab
   http:

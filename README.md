@@ -154,8 +154,8 @@ Check the service entry definition
 
 ```bash
 # kubectl get se -n istio-system
-NAME                   HOSTS                                                                                  LOCATION        RESOLUTION   AGE
-internal-https-route   ["*.sst.suse.lab","demox-app-1.sst.suse.lab","demox-app-2.sst.suse.lab","demoy-app-1.sst.suse.lab","demoy-app-2.sst.suse.lab"]   MESH_INTERNAL   DNS          24d
+NAME         HOSTS                LOCATION        RESOLUTION   AGE
+http-route   ["*.sst.suse.lab"]   MESH_INTERNAL   DNS          40h
 ```
 
 
