@@ -20,6 +20,9 @@ This document describes two specific use cases of NeuVector to protect the ingre
      * docker.io/neuvector/controller:eg.1
      * docker.io/neuvector/enforcer:eg.1
      * docker.io/neuvector/manager:eg.1
+     * docker.io/neuvector/scanner:latest
+     * docker.io/neuvector/updater:latest
+
 
 3. Testing Host:
 
@@ -29,11 +32,11 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
    ```bash
    git clone https://github.com/dsohk/nv_service_mesh_testing
-   
+
    cd nv_service_mesh_testing
    ```
 
-   
+
 
 
 
@@ -44,7 +47,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
 
 
-### Scenario 1 - Wildcard test in Service Mesh 
+### Scenario 1 - Wildcard test in Service Mesh
 
 
 
@@ -185,7 +188,7 @@ demoy-app-2-vs   ["mesh"]                        ["demoy-app-2-svc.demoy"]   8m4
 
 #### Step 5. Create two network rules
 
-* rule 5: deny traffic from `nv.demoy-app-1.demoy` to custom-group 
+* rule 5: deny traffic from `nv.demoy-app-1.demoy` to custom-group
 
 * rule 6: allow traffic from `nv.demoy-app-2.demoy` to custom-group
 
@@ -248,4 +251,3 @@ Within the command prompt of the given pod, run the curl command.
 root@demoy-app-2-6db76d46d6-txpbb:/usr/local/apache2# curl demox-app-1.sst.suse.lab
 <html><body><h1>It works!</h1></body></html>
 ```
-

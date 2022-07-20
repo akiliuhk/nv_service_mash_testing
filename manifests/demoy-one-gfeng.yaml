@@ -115,8 +115,7 @@ spec:
   gateways:
   - istio-system/http-gateway
   hosts:
-  #- demoy-app-1.sst.suse.lab
-  - demoy-app-1-svc.demoy
+  - demoy-app-1.sst.suse.lab
   http:
   - route:
     - destination:
@@ -138,8 +137,7 @@ spec:
   - mesh
   #- istio-system/http-gateway
   hosts:
-  #- demoy-app-2.sst.suse.lab
-  - demoy-app-2-svc.demoy
+  - demoy-app-2.sst.suse.lab
   http:
   - route:
     - destination:
