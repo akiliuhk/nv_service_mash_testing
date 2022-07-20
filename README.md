@@ -106,13 +106,14 @@ The result would be like below.
 
 ```bash
 # kubectl get pods,svc -n demox
+
 NAME                               READY   STATUS    RESTARTS   AGE
-pod/demox-app-1-8f4c768dd-2b6dv    2/2     Running   0          5h29m
-pod/demox-app-2-5cf94fb455-6pl4w   2/2     Running   0          5h29m
+pod/demox-app-1-8f4c768dd-2b6dv    2/2     Running   0          2d1h
+pod/demox-app-2-5cf94fb455-6pl4w   2/2     Running   0          2d1h
 
 NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
-service/demox-app-1-svc   LoadBalancer   10.43.155.253   10.201.0.212   80:30182/TCP   5h29m
-service/demox-app-2-svc   LoadBalancer   10.43.62.85     10.201.0.213   80:31003/TCP   5h29m
+service/demox-app-1-svc   LoadBalancer   10.43.155.253   10.201.0.212   80:30182/TCP   2d1h
+service/demox-app-2-svc   LoadBalancer   10.43.62.85     10.201.0.213   80:31003/TCP   2d1h
 ```
 
 Likewise, verify the deployed resource in namespace `demoy`.
@@ -127,12 +128,12 @@ The result should be similar as below.
 # kubectl get pods,svc -n demoy
 
 NAME                               READY   STATUS    RESTARTS   AGE
-pod/demoy-app-1-5dcc54b48f-2n8r4   2/2     Running   0          5h33m
-pod/demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          5h33m
+pod/demoy-app-1-5dcc54b48f-2n8r4   2/2     Running   0          2d1h
+pod/demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 
 NAME                      TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
-service/demoy-app-1-svc   LoadBalancer   10.43.197.53    10.201.0.210   80:31317/TCP   5h33m
-service/demoy-app-2-svc   LoadBalancer   10.43.144.240   10.201.0.211   80:31526/TCP   5h33m
+service/demoy-app-1-svc   LoadBalancer   10.43.197.53    10.201.0.210   80:31317/TCP   2d1h
+service/demoy-app-2-svc   LoadBalancer   10.43.144.240   10.201.0.211   80:31526/TCP   2d1h
 ```
 
 
@@ -154,8 +155,9 @@ Check the service entry definition
 
 ```bash
 # kubectl get se -n istio-system
+
 NAME         HOSTS                LOCATION        RESOLUTION   AGE
-http-route   ["*.sst.suse.lab"]   MESH_INTERNAL   DNS          40h
+http-route   ["*.sst.suse.lab"]   MESH_INTERNAL   DNS          42h
 ```
 
 
@@ -164,18 +166,20 @@ Check the virtual services in `demox` and `demoy` namespace.
 
 ```bash
 # kubectl get vs -n demox
-NAME             GATEWAYS                        HOSTS                                                                         AGE
-demox-app-1-vs   ["istio-system/http-gateway"]   ["demox-app-1-svc.demox"]   9m11s
-demox-app-2-vs   ["mesh"]                        ["demox-app-2-svc.demox"]
+
+NAME             GATEWAYS                        HOSTS                          AGE
+demox-app-1-vs   ["istio-system/http-gateway"]   ["demox-app-1.sst.suse.lab"]   2d1h
+demox-app-2-vs   ["mesh"]                        ["demox-app-2.sst.suse.lab"]   2d1h
 ```
 
 
 
 ```bash
 # kubectl get vs -n demoy
-NAME             GATEWAYS                        HOSTS                       AGE
-demoy-app-1-vs   ["istio-system/http-gateway"]   ["demoy-app-1-svc.demoy"]   8m42s
-demoy-app-2-vs   ["mesh"]                        ["demoy-app-2-svc.demoy"]   8m42s
+
+NAME             GATEWAYS                        HOSTS                          AGE
+demoy-app-1-vs   ["istio-system/http-gateway"]   ["demoy-app-1.sst.suse.lab"]   2d1h
+demoy-app-2-vs   ["mesh"]                        ["demoy-app-2.sst.suse.lab"]   2d1h
 ```
 
 
@@ -206,8 +210,8 @@ Here are the pods in `demoy` namespace
 # kubectl get pods -n demoy
 
 NAME                           READY   STATUS    RESTARTS   AGE
-demoy-app-1-5dcc54b48f-2n8r4   2/2     Running   0          5h51m
-demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          5h51m
+demoy-app-1-5dcc54b48f-2n8r4   2/2     Running   0          2d1h
+demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 ```
 
 
