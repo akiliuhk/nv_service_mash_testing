@@ -216,7 +216,7 @@ demoy-app-1-5dcc54b48f-2n8r4   2/2     Running   0          2d1h
 demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 ```
 
-Connect to the shell of `demos-app-2` pod
+Connect to the shell of `demoy-app-2` pod
 
 ```bash
 kubectl exec -ti demoy-app-2-6db76d46d6-txpbb -n demoy -- bash
@@ -229,7 +229,7 @@ root@demoy-app-1-5dcc54b48f-2n8r4:/usr/local/apache2# curl demox-app-1.sst.suse.
 <html><body><h1>It works!</h1></body></html>
 ```
 
-Likewise, repeat this for `demos-app-2.sst.suse.lab` 
+Likewise, repeat this for `demoy-app-2.sst.suse.lab` 
 
 Finally, turn on Protect mode for all the demox and demoy apps in NeuVector.
 
