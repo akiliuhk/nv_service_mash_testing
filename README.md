@@ -192,9 +192,8 @@ demoy-app-2-vs   ["mesh"]                        ["demoy-app-2.sst.suse.lab"]   
 
 #### Step 5. Create two network rules
 
-* rule 5: deny traffic from `nv.demoy-app-1.demoy` to custom-group
-
-* rule 6: allow traffic from `nv.demoy-app-2.demoy` to custom-group
+* rule 1: allow traffic from `nv.demoy-app-2.demoy` to custom-group `any.sst.suse.lab`
+* rule 2: deny traffic from `nv.demoy-app-1.demoy` to custom-group `any.sst.suse.lab`
 
 ![Network Rules in Custom Group](images/nv-custom-group-netrules.png)
 
