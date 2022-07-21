@@ -229,7 +229,7 @@ root@demoy-app-1-5dcc54b48f-2n8r4:/usr/local/apache2# curl demox-app-1.sst.suse.
 <html><body><h1>It works!</h1></body></html>
 ```
 
-Likewise, repeat this for `demoy-app-2.sst.suse.lab` 
+Likewise, repeat this steo for pod `demoy-app-1.sst.suse.lab` 
 
 Finally, turn on Protect mode for all the demox and demoy apps in NeuVector.
 
