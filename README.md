@@ -277,7 +277,7 @@ Within the command prompt of the given pod, run the curl command.
 
 ```bash
 root@demoy-app-1-5dcc54b48f-2n8r4:/usr/local/apache2# curl demox-app-1.sst.suse.lab
-upstream connect error or disconnect/reset before headers. reset reason: connection failure
+curl: (7) Failed to connect to demox-app-1.sst.suse.lab port 80: Connection timed out
 ```
 
 A security event should have been raised due to the violation of the deny rule.
