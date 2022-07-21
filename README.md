@@ -219,7 +219,7 @@ demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 
 ##### Step 6.1 - Test if `demoy-app-1` can access to `demox-app-1` by hostname.
 
-NeuVector should not blocked any traffic in `demoy-app-1` and `demoy-app-2` .
+NeuVector should not block any traffic in the `demoy-app-1` and `demoy-app-2` .
 
 Let's execute the command below in the `demoy-app-1` pods in `demoy` namespace.
 
