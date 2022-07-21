@@ -192,16 +192,14 @@ demoy-app-2-vs   ["mesh"]                        ["demoy-app-2.sst.suse.lab"]   
 
 #### Step 5. Create two network rules
 
-* rule 1: allow traffic from `nv.demoy-app-2.demoy` to custom-group `any.sst.suse.lab`
-* rule 2: deny traffic from `nv.demoy-app-1.demoy` to custom-group `any.sst.suse.lab`
+* rule 1: `Allow` traffic from `nv.demoy-app-2.demoy` to custom-group `any.sst.suse.lab`
+* rule 2: `Deny` traffic from `nv.demoy-app-1.demoy` to custom-group `any.sst.suse.lab`
 
 ![Network Rules in Custom Group](images/nv-custom-group-netrules.png)
 
 
 
-#### Step 6 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name in discover mode
-
-Ensure `nv.demoy-app-1` and `nv.demoy-app-2`  is in discover mode
+#### Step 6 - Simulate allowed network traffic in the application can access to demox FQDN name in Discover mode
 
 ![Network Rules in Custom Group](images/nv-demo-app-group-discover-mode.png)
 
@@ -220,6 +218,8 @@ demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 
 
 ##### Step 6.1 - Test if `demoy-app-1` can access to `demox-app-1` by hostname.
+
+NeuVector should not blocked any traffic in `demoy-app-1` and `demoy-app-2` .
 
 Let's execute the command below in the `demoy-app-1` pods in `demoy` namespace.
 
@@ -253,7 +253,7 @@ root@demoy-app-2-6db76d46d6-txpbb:/usr/local/apache2# curl demox-app-1.sst.suse.
 
 
 
-#### Step 7 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name in Protected mode
+#### Step 7 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name in Protect mode
 
 now we switch `nv.demoy-app-1` and `nv.demoy-app-2`  to protect mode
 
@@ -267,7 +267,7 @@ now we switch `nv.demoy-app-1` and `nv.demoy-app-2`  to protect mode
 
 NeuVector should have blocked the traffic as a deny rule is defined in the custom group.
 
-Let's execute the command below in one of the pods in `demoy` namespace.
+Let's execute the command below in the `demoy-app-1` pods in `demoy` namespace.
 
 ```bash
 kubectl exec -ti demoy-app-1-5dcc54b48f-2n8r4 -n demoy -- bash
@@ -286,11 +286,11 @@ A security event should have been raised due to the violation of the deny rule.
 
 
 
-##### Step 7.2 - Test if demoy-app-2 can access to demos-app-1 by hostname.
+##### Step 7.2 - Test if `demoy-app-2` can access to `demox-app-1` by hostname.
 
 NeuVector should have allowed such traffic as an explicit allow rule is defined in the custom group.
 
-Let's execute the command below in one of the pods in `demoy` namespace.
+Let's execute the command below in the `demoy-app-2` pods in `demoy` namespace.
 
 ```bash
 kubectl exec -ti demoy-app-2-6db76d46d6-txpbb -n demoy -- bash
