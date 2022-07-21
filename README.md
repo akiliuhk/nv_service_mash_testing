@@ -31,9 +31,8 @@ This document describes two specific use cases of NeuVector to protect the ingre
    Check out the testing manifests into the testing host
 
    ```bash
-   git clone https://github.com/dsohk/nv_service_mesh_testing
-   
-   cd nv_service_mesh_testing
+   git clone https://github.com/akiliuhk/nv_service_mash_testing
+   cd nv_service_mash_testing
    ```
 
 
