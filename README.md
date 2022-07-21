@@ -32,7 +32,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
    ```bash
    git clone https://github.com/dsohk/nv_service_mesh_testing
-
+   
    cd nv_service_mesh_testing
    ```
 
@@ -200,7 +200,11 @@ demoy-app-2-vs   ["mesh"]                        ["demoy-app-2.sst.suse.lab"]   
 
 
 
-#### Step 6 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name
+#### Step 6 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name in discover mode
+
+Ensure `nv.demoy-app-1` and `nv.demoy-app-2`  is in discover mode
+
+![Network Rules in Custom Group](images/nv-demo-app-group-discover-mode.png)
 
 
 
@@ -217,6 +221,50 @@ demoy-app-2-6db76d46d6-txpbb   2/2     Running   0          2d1h
 
 
 ##### Step 6.1 - Test if `demoy-app-1` can access to `demox-app-1` by hostname.
+
+Let's execute the command below in the `demoy-app-1` pods in `demoy` namespace.
+
+```bash
+kubectl exec -ti demoy-app-1-5dcc54b48f-2n8r4 -n demoy -- bash
+```
+
+Within the command prompt of the given pod, run the curl command.
+
+```bash
+root@demoy-app-1-5dcc54b48f-2n8r4:/usr/local/apache2# curl demox-app-1.sst.suse.lab
+<html><body><h1>It works!</h1></body></html>
+```
+
+
+
+##### Step 6.2 - Test if `demoy-app-2` can access to `demox-app-1` by hostname. 
+
+Let's execute the command below in the `demoy-app-2` pods in `demoy` namespace.
+
+```bash
+kubectl exec -ti demoy-app-2-6db76d46d6-txpbb -n demoy -- bash
+```
+
+Within the command prompt of the given pod, run the curl command.
+
+```bash
+root@demoy-app-2-6db76d46d6-txpbb:/usr/local/apache2# curl demox-app-1.sst.suse.lab
+<html><body><h1>It works!</h1></body></html>
+```
+
+
+
+#### Step 7 - Test if `nv.demoy-app-1` and `nv.demoy-app-2` can access demox FQDN name in Protected mode
+
+now we switch `nv.demoy-app-1` and `nv.demoy-app-2`  to protect mode
+
+![Network Rules in Custom Group](images/nv-demo-app-group-protect-mode.png)
+
+
+
+
+
+##### Step 7.1 - Test if `demoy-app-1` can access to `demox-app-1` by hostname.
 
 NeuVector should have blocked the traffic as a deny rule is defined in the custom group.
 
@@ -239,7 +287,7 @@ A security event should have been raised due to the violation of the deny rule.
 
 
 
-##### Step 6.2 - Test if demoy-app-2 can access to demos-app-1 by hostname.
+##### Step 7.2 - Test if demoy-app-2 can access to demos-app-1 by hostname.
 
 NeuVector should have allowed such traffic as an explicit allow rule is defined in the custom group.
 
