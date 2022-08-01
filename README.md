@@ -166,9 +166,9 @@ Check the virtual services in `demox` and `demoy` namespace.
 ```bash
 # kubectl get vs -n demox
 
-NAME             GATEWAYS                        HOSTS                          AGE
-demox-app-1-vs   ["istio-system/http-gateway"]   ["demox-app-1.sst.suse.lab"]   2d1h
-demox-app-2-vs   ["mesh"]                        ["demox-app-2.sst.suse.lab"]   2d1h
+NAME             GATEWAYS                               HOSTS                          AGE
+demox-app-1-vs   ["istio-system/http-gateway","mesh"]   ["demox-app-1.sst.suse.lab"]   13d
+demox-app-2-vs   ["istio-system/http-gateway","mesh"]   ["demox-app-2.sst.suse.lab"]   13d
 ```
 
 
@@ -176,9 +176,9 @@ demox-app-2-vs   ["mesh"]                        ["demox-app-2.sst.suse.lab"]   
 ```bash
 # kubectl get vs -n demoy
 
-NAME             GATEWAYS                        HOSTS                          AGE
-demoy-app-1-vs   ["istio-system/http-gateway"]   ["demoy-app-1.sst.suse.lab"]   2d1h
-demoy-app-2-vs   ["mesh"]                        ["demoy-app-2.sst.suse.lab"]   2d1h
+NAME             GATEWAYS                               HOSTS                          AGE
+demoy-app-1-vs   ["istio-system/http-gateway","mesh"]   ["demoy-app-1.sst.suse.lab"]   13d
+demoy-app-2-vs   ["istio-system/http-gateway","mesh"]   ["demoy-app-2.sst.suse.lab"]   13d
 ```
 
 
@@ -446,9 +446,9 @@ Check the virtual services in `demox` and `demoy` namespace.
 ```bash
 # kubectl get vs -n https-demox
 
-NAME             GATEWAYS                         HOSTS                                AGE
-demox-app-1-vs   ["istio-system/https-gateway"]   ["https-demox-app-1.sst.suse.lab"]   8m3s
-demox-app-2-vs   ["mesh"]                         ["https-demox-app-2.sst.suse.lab"]   8m3s
+NAME                   GATEWAYS                                HOSTS                                AGE
+https-demox-app-1-vs   ["istio-system/https-gateway","mesh"]   ["https-demox-app-1.sst.suse.lab"]   4h5m
+https-demox-app-2-vs   ["istio-system/https-gateway","mesh"]   ["https-demox-app-2.sst.suse.lab"]   4h5m
 ```
 
 
@@ -456,9 +456,9 @@ demox-app-2-vs   ["mesh"]                         ["https-demox-app-2.sst.suse.l
 ```bash
 # kubectl get vs -n https-demoy
 
-NAME             GATEWAYS                         HOSTS                                AGE
-demoy-app-1-vs   ["istio-system/https-gateway"]   ["https-demoy-app-1.sst.suse.lab"]   8m11s
-demoy-app-2-vs   ["mesh"]                         ["https-demoy-app-2.sst.suse.lab"]   8m11s
+NAME                   GATEWAYS                                HOSTS                                AGE
+https-demoy-app-1-vs   ["istio-system/https-gateway","mesh"]   ["https-demoy-app-1.sst.suse.lab"]   4h6m
+https-demoy-app-2-vs   ["istio-system/https-gateway","mesh"]   ["https-demoy-app-2.sst.suse.lab"]   4h6m
 ```
 
 
