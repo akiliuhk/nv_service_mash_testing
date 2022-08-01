@@ -463,7 +463,7 @@ demoy-app-2-vs   ["mesh"]                         ["https-demoy-app-2.sst.suse.l
 
 
 
-#### Step 5 - Create custom-group which has wildcard in NeuVector
+#### Step 5 - Create custom-group with dedicated FQDN in NeuVector
 
 Create Custom group with address `https-demox-app-1.sst.suse.lab` and `https-demox-app-2.sst.suse.lab`
 
