@@ -1,19 +1,17 @@
 apiVersion: networking.istio.io/v1beta1
 kind: ServiceEntry
 metadata:
-  name: https-route-httpbin
+  name: http-route
   namespace: istio-system
 spec:
   hosts:
-  #- "*.us-east-1.elb.amazonaws.com"
-  - "*.sst.suse.lab"
+  - '*.sst.suse.lab'
   location: MESH_INTERNAL
   ports:
-  - name: https
-    number: 443
-    protocol: TLS
+  - name: http
+    number: 80
+    protocol: HTTP
   resolution: DNS
- #resolution: STATIC
   endpoints:
   - address: istio-ingressgateway.istio-system.svc.cluster.local
- #- address: 10.110.67.127
+  
