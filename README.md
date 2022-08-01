@@ -531,7 +531,7 @@ root@https-demoy-app-2-59764c79bb-tddbr:/usr/local/apache2# curl --cacert sst.su
 
 Likewise, repeat this step for pod `https-demoy-app-1.sst.suse.lab` 
 
-Finally, turn on Protect mode for all the `https-demox` and `https-demoy` apps in NeuVector.
+Finally, turn on Protect mode for all the `https-demox` and `https-demoy` apps in NeuVector. 
 
 ![image-20220801144114802](images/nv-https-group-protect-mode.png)
 
