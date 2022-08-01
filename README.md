@@ -39,6 +39,22 @@ This document describes two specific use cases of NeuVector to protect the ingre
 
 
 
+## Known issues
+
+1. Network rule can only control “any” protocol and “any” port instead of “SSL” protocol and “tcp/443” at the moment,  expect to have the granularity of these rules to be down to protocol and port.
+
+   
+
+   
+
+## Test feedback
+
+1. This service entry blocking enhancement is done as egress control, is it possible that we can apply end-to-end access control for ingress traffic?
+
+
+
+
+
 ## Test Scenarios
 
 1. Wildcard test in service mesh
