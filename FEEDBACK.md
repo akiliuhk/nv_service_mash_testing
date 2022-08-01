@@ -34,7 +34,7 @@ This document describes the feedback of NeuVector test built to protect the ingr
 
 
 
-![image-20220801100759793](/Users/ALIU/Library/Application Support/typora-user-images/image-20220801100759793.png)
+![image-20220801100759793](images/nv-netrules-443-abnormal-security-events.png)
 
 2. On the other hand, to my understanding, end-to-end enhancement is done as egress control, is it possible that we can apply end-to-end access control for ingress traffic?
 
