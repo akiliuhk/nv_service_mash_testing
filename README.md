@@ -42,7 +42,7 @@ This document describes two specific use cases of NeuVector to protect the ingre
 ## Test Scenarios
 
 1. Wildcard test in service mesh
-2. HTTPS test in service mesh (To Be Documented)
+2. HTTPS test in service mesh
 
 
 
