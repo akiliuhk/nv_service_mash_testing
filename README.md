@@ -345,7 +345,7 @@ https-gateway   38h
 
 
 
-#### Step 3 - Deploy the demo apps into namespace `demox` and `demoy`
+#### Step 3 - Deploy the demo apps into namespace `https-demox` and `https-demoy`
 
 ```bash
 kubectl create -f manifests/https/https-demox-one-aliu.yaml
@@ -374,7 +374,7 @@ virtualservice.networking.istio.io/https-demoy-app-1-vs created
 virtualservice.networking.istio.io/https-demoy-app-2-vs created
 ```
 
-Let's verify the deployed resources in namespace `demox`.
+Let's verify the deployed resources in namespace `https-demox`.
 
 ```bash
 # kubectl get pods,svc -n https-demox
@@ -394,7 +394,7 @@ service/https-demox-app-1-svc   LoadBalancer   10.43.123.236   10.201.0.214   44
 service/https-demox-app-2-svc   LoadBalancer   10.43.111.27    10.201.0.215   443:30594/TCP   36s
 ```
 
-Likewise, verify the deployed resource in namespace `demoy`.
+Likewise, verify the deployed resource in namespace `https-demoy`.
 
 ```bash
 # kubectl get pods,svc -n https-demoy
@@ -441,7 +441,7 @@ https-route   ["*.sst.suse.lab"]   MESH_INTERNAL   DNS          45s
 
 
 
-Check the virtual services in `demox` and `demoy` namespace.
+Check the virtual services in `https-demox` and `https-demoy` namespace.
 
 ```bash
 # kubectl get vs -n https-demox
@@ -494,7 +494,7 @@ Let's simulate all the allowed network traffic while the policy is in Discover m
 
 Now, connect to the shell of `https-demoy-app-2` pod and try to visit FQDN with `https-demox-app-2.sst.suse.lab` which is an allowed traffic.
 
-List out the pods in `demoy` namespace.
+List out the pods in `https-demoy` namespace.
 
 ```bash
 # kubectl get pods -n https-demoy
@@ -531,7 +531,7 @@ root@https-demoy-app-2-59764c79bb-tddbr:/usr/local/apache2# curl --cacert sst.su
 
 Likewise, repeat this step for pod `https-demoy-app-1.sst.suse.lab` 
 
-Finally, turn on Protect mode for all the demox and demoy apps in NeuVector.
+Finally, turn on Protect mode for all the `https-demox` and `https-demoy` apps in NeuVector.
 
 ![image-20220801144114802](images/nv-https-group-protect-mode.png)
 
@@ -571,7 +571,7 @@ root@https-demoy-app-2-59764c79bb-tddbr:/usr/local/apache2# curl --cacert sst.su
 
 NeuVector should block traffic visiting to FQDN `https-demox-app-2.sst.suse.lab` from the pod `https-demoy-app-2`
 
-Let's execute the command below in the `https-demoy-app-2` pods in `https-demoy-app-2` namespace.
+Let's execute the command below in the `https-demoy-app-2` pods in `https-demoy` namespace.
 
 ```bash
 root@https-demoy-app-2-59764c79bb-tddbr:/usr/local/apache2# curl --cacert sst.suse.lab.crt https://https-demox-app-2.sst.suse.lab
