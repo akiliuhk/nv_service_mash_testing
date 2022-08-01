@@ -30,7 +30,7 @@ This document describes the feedback of NeuVector test built to protect the ingr
 
    Please help raise this to product team as we still expect the granularity of these rules to be down to protocol and port.
 
-![image-20220801100738864](/Users/ALIU/Library/Application Support/typora-user-images/image-20220801100738864.png)
+![image-20220801100738864](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-feedback-netrules-bugs-no-443.png)
 
 
 
@@ -40,7 +40,7 @@ This document describes the feedback of NeuVector test built to protect the ingr
 
    From my observation, these 2 rules are not effective for controlling traffic coming from browser to target deployments.
 
-![nv-custom-group-suggestion-external](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-suggestion-external.png)
+![image-20220801153635540](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-suggestion-external.png)
 
 
 
