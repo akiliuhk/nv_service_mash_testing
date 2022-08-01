@@ -467,9 +467,9 @@ demoy-app-2-vs   ["mesh"]                         ["https-demoy-app-2.sst.suse.l
 
 Create Custom group with address `https-demox-app-1.sst.suse.lab` and `https-demox-app-2.sst.suse.lab`
 
-![image-20220801103405216](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-https-demox-app-1.png)
+![image-20220801103405216](images/nv-custom-group-https-demox-app-1.png)
 
-![image-20220801103533501](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-https-demox-app-2.png)
+![image-20220801103533501](images/nv-custom-group-https-demox-app-2.png)
 
 
 
@@ -482,7 +482,7 @@ Create Custom group with address `https-demox-app-1.sst.suse.lab` and `https-dem
 * rule 3: `Allow` traffic from `nv.https-demoy-app-1.https-demoy` to custom-group `https-demox-app-1.sst.suse.lab`
 * rule 4: `Deny` traffic from `nv.https-demoy-app-1.https-demoy` to custom-group `https-demox-app-2.sst.suse.lab`
 
-![image-20220801150603581](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-https-netrules.png)
+![image-20220801150603581](images/nv-custom-group-https-netrules.png)
 
 
 
@@ -490,7 +490,7 @@ Create Custom group with address `https-demox-app-1.sst.suse.lab` and `https-dem
 
 Let's simulate all the allowed network traffic while the policy is in Discover mode.
 
-![image-20220801103924925](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-https-group-discover-mode.png)
+![image-20220801103924925](images/nv-https-group-discover-mode.png)
 
 Now, connect to the shell of `https-demoy-app-2` pod and try to visit FQDN with `https-demox-app-2.sst.suse.lab` which is an allowed traffic.
 
@@ -533,7 +533,7 @@ Likewise, repeat this step for pod `https-demoy-app-1.sst.suse.lab`
 
 Finally, turn on Protect mode for all the demox and demoy apps in NeuVector.
 
-![image-20220801144114802](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-https-group-protect-mode.png)
+![image-20220801144114802](images/nv-https-group-protect-mode.png)
 
 
 
@@ -546,7 +546,7 @@ To recap, in step 5, we defined the following rules
 * rule 3: `Allow` traffic from `nv.https-demoy-app-1.https-demoy` to custom-group `https-demox-app-1.sst.suse.lab`
 * rule 4: `Deny` traffic from `nv.https-demoy-app-1.https-demoy` to custom-group `https-demox-app-2.sst.suse.lab`
 
-![image-20220801150603581](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-https-netrules.png)
+![image-20220801150603581](images/nv-custom-group-https-netrules.png)
 
 ##### Step 7.1 - Validate network rule 1
 
@@ -580,7 +580,7 @@ curl: (7) Failed to connect to https-demox-app-1.sst.suse.lab port 443: Connecti
 
 A security event should have been raised due to the violation of the deny rule.
 
-![image-20220801150954342](/Users/ALIU/Library/Application Support/typora-user-images/image-20220801150954342.png)
+![image-20220801150954342](images/nv-custom-group-demox-violation1.png)
 
 
 
@@ -614,7 +614,7 @@ curl: (7) Failed to connect to https-demox-app-2.sst.suse.lab port 443: Connecti
 
 A security event should have been raised due to the violation of the deny rule.
 
-![image-20220801151454903](/Users/ALIU/Library/Application Support/typora-user-images/image-20220801151454903.png)
+![image-20220801151454903](images/nv-custom-group-demox-violation2.png)
 
 
 

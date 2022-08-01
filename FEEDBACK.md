@@ -30,7 +30,7 @@ This document describes the feedback of NeuVector test built to protect the ingr
 
    Please help raise this to product team as we still expect the granularity of these rules to be down to protocol and port.
 
-![image-20220801100738864](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-feedback-netrules-bugs-no-443.png)
+![image-20220801100738864](images/nv-feedback-netrules-bugs-no-443.png)
 
 
 
@@ -40,7 +40,7 @@ This document describes the feedback of NeuVector test built to protect the ingr
 
    From my observation, these 2 rules are not effective for controlling traffic coming from browser to target deployments.
 
-![image-20220801153635540](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-suggestion-external.png)
+![image-20220801153635540](images/nv-custom-group-suggestion-external.png)
 
 
 
@@ -54,9 +54,9 @@ I toggled between ALLOW/DENY mode for the above 2 rules, and tried making reques
 
 However, I observed that seems #26 will also control traffic going to https://demo-test-1-app-1.home-np-poc2.oocl.com.
 
-![nv-network-rules](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-network-rules.png)
+![nv-network-rules](images/nv-network-rules.png)
 
-![nv-custom-group1](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group1.png)
+![nv-custom-group1](images/nv-custom-group1.png)
 
 
 
@@ -68,13 +68,13 @@ Supplement security events and curl logs for test2:
 
 
 
-![nv-custom-group-security-events](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-security-events.png)
+![nv-custom-group-security-events](images/nv-custom-group-security-events.png)
 
 
 
 
 
-![nv-custom-group-shell-curl](/Users/ALIU/GitHub/nv_service_mash_testing/images/nv-custom-group-shell-curl.png)
+![nv-custom-group-shell-curl](images/nv-custom-group-shell-curl.png)
 
 #### 
 
